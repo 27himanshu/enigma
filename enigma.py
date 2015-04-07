@@ -7,6 +7,9 @@ Created on Tue Apr  7 20:52:00 2015
 """
 import sys
 class Rotor():
+    """Rotor with a given settings and current position of notch. If it is a reflector is stated by is_reflector.
+    Mapping is such that first element of list, settings, maps to second element of the list and so forth.
+    """
     def __init__(self, s=[17, 6, 13, 21, 2, 16, 3, 10, 20, 14, 5, 12, 1, 4,
                               0, 19, 22, 11, 23, 18, 7, 9, 25, 15, 8, 24],n = 0,
                               r=False):
