@@ -97,22 +97,7 @@ class Enigma():
             j=self.r1.map_backward(j)
             out_text.append(j)
         return out_text
-    def decipher(self,in_text):
-        out_text=[]
-        for i in in_text:
-            j=self.r1.map_forward(i)
-            self.r1.spin()
-            if(self.r1.number_spin==26):
-                self.r2.spin()
-            j=self.r2.map_forward(j)
-            if(self.r2.number_spin==26):
-                self.r3.spin()
-            j=self.r3.map_reflect(j)
-            j=self.r2.map_backward(j)
-            j=self.r1.map_backward(j)
-            out_text.append(j)
-        return out_text
-        
+
 
 if __name__== "__main__":
     arg=sys.argv
@@ -123,4 +108,4 @@ if __name__== "__main__":
     if(arg[1]=="cipher" or arg[1]=="c"):
         print("Ciphered text is: "+ key.out_text_cipher(eng.cipher(key.input_text(arg2))))
     if(arg[1]=="decipher" or arg[1]=="d"):
-        print("Decphered text is: " + key.out_text_decipher(eng.decipher(key.input_text(arg2))))
+        print("Decphered text is: " + key.out_text_decipher(eng.cipher(key.input_text(arg2))))
