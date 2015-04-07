@@ -105,7 +105,7 @@ class Enigma():
 if __name__== "__main__":
     arg=sys.argv
     arg2=arg[2:]
-    arg2=''.join(arg2)
+    arg2=' '.join(arg2)
     eng=Enigma()
     key=Keyboard()
     if(arg[1]=="cipher" or arg[1]=="c"):
