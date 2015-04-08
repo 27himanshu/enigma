@@ -156,4 +156,4 @@ if __name__== "__main__":
     if(arg[1]=="cipher" or arg[1]=="c"):
         print("Ciphered text is: "+ key.out_text_cipher(enigma.cipher(key.input_text(string))))
     if(arg[1]=="decipher" or arg[1]=="d"):
-        print("Decphered text is: " + key.out_text_decipher(enigma.cipher(key.input_text(string))))
+        print("Deciphered text is: " + key.out_text_decipher(enigma.cipher(key.input_text(string))))
