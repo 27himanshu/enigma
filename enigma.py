@@ -152,6 +152,7 @@ class Enigma():
 
 
 if __name__== "__main__":
+		import sys
     arg=sys.argv
     string=arg[2:]
     string=' '.join(string)
