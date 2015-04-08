@@ -11,5 +11,5 @@ Usage
 $ python enigma.py cipher hello world
 >>Ciphered text is: xfdwhamqadtn
 $ python enigma.py decipher xfdwhamqadtn
->>Decphered text is: hello world
+>>Deciphered text is: hello world
 ```
