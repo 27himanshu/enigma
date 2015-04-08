@@ -4,7 +4,6 @@ Enigma
 Created on Tue Apr  7 20:52:00 2015
 @author: himanshu
 """
-import sys
 
 w_rotor1=[3, 12, 19, 22, 18, 8, 11, 17, 20, 24, 16, 13, 10, 5, 4, 9, 2, 0,
           25, 1, 15, 6, 23, 14, 7, 21]
@@ -23,10 +22,8 @@ w_reflector=[16, 24, 7, 14, 6, 13, 4, 2, 21, 15, 20, 25, 19, 5, 3, 9, 0, 23,
     Mappings are such tha in rotor1 A maps to D, B maps to M and so forth."""    
 
 class Rotor():
-    """Create new rotors with wirings
-    """
-
-                              
+    """Create new rotors with wirings"""
+    
     def __init__(self, wiring, is_reflector=False, offset=0):
         """ wiring: a list containing mapping of rotor
             is_reflector: True if the rotor act as a reflector (by default set to False)
@@ -39,8 +36,10 @@ class Rotor():
         for _ in range(offset):
             self.spin()
         return
+        
     def spin(self):
         """call this function to spin/step forward the rotor """
+        
         self.number_spin=self.number_spin+1
         if(self.number_spin>26):
             self.number_spin=0
@@ -49,15 +48,21 @@ class Rotor():
             self.offset=0
         self.wiring=self.wiring[25:]+self.wiring[:25]
         return
+        
     def map_forward(self,i):
         """map element forward (right to left)"""
+        
         return self.wiring[i]
+        
     def map_backward(self,i):
         """map element backward (left to right)"""
+        
         index=self.wiring.index(i)
         return index
+        
     def map_reflect(self,i):
         """map element in reflector"""
+        
         return self.wiring[i]
         
         
@@ -79,6 +84,7 @@ class Keyboard():
         Also maps a space with "xz"
         a fullstop with "wq"
         and a question mark with "ds"."""
+        
     def input_text(self,text='This is Enigma'):
         text=text.replace(' ',"xz")
         text=text.replace('.', "wq")
@@ -88,12 +94,14 @@ class Keyboard():
         for i in text:
             in_text.append(ord(i)%97)
         return in_text
+        
     def out_text_cipher(self,text=[0,1,2,3]):
         o_text=[]
         for i in text:
             o_text.append(chr(i+97))
         o_text=''.join(o_text)
         return o_text
+        
     def out_text_decipher(self,text=[0,1,2,3]):
         o_text=[]
         for i in text:
@@ -103,10 +111,12 @@ class Keyboard():
         o_text=o_text.replace("qw",".")
         o_text=o_text.replace("ds","?")
         return o_text
+        
 
 class Enigma():
     """Takes four arguments of which last three are wiring settings for 2 rotors and a reflector
-    First argument is a tuple of two elements containing offset of two rotors"""       
+    First argument is a tuple of two elements containing offset of two rotors"""  
+    
     def __init__(self,off, wiring1, wiring2, wiring3):
         self.wiring1=wiring1
         self.wiring2=wiring2
@@ -118,12 +128,15 @@ class Enigma():
         
     def reset(self):
         """Resets the current instance to its initial settings"""
+        
         self.r1(self.wiring1,offset=self.off[0])
         self.r2(self.wiring3,offset=self.off[1])
         self.r3(self.wiring3, is_reflector=True)
         return
+        
     def cipher(self,in_text):
         """Encode the list in_text and return the encoded list"""
+        
         out_text=[]
         for i in in_text:
             j=self.r1.map_forward(i)
@@ -136,6 +149,7 @@ class Enigma():
             if(self.r1.number_spin==26):
                 self.r2.spin()
         return out_text
+
 
 if __name__== "__main__":
     arg=sys.argv
