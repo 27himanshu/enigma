@@ -13,7 +13,7 @@ w_reflector=[16, 24, 7, 14, 6, 13, 4, 2, 21, 15, 20, 25, 19, 5, 3, 9, 0, 23,
              22, 12, 10, 8, 18, 17, 1, 11]
 w_plugboard=[1, 0, 3, 2, 5, 4, 7, 6, 9, 8, 11, 10, 13, 12, 15, 14, 17, 16, 19, 18,
              20, 21, 22, 23, 24, 25]
-""" w_rotor1 , w_rotor2 and w_reflector are default mappings/wiring of each rotor:
+""" w_rotor1 , w_rotor2, w_reflector and w_plugboard are default mappings/wiring of each element:
 
 
                     ABCDEFGHIJKLMNOPQRSTUVWXYZ
@@ -35,11 +35,11 @@ class Rotor():
             offset: current offset of rotor
             number_spin: store the number of times rotor is rotated"""
         self.wiring=wiring
-        self.offset=offset
         self.number_spin=0
         self.is_reflector=is_reflector
         for _ in range(offset):
             self.spin()
+        self.offset=offset
         return
     def spin(self):
         """call this function to spin/step forward the rotor """
@@ -80,9 +80,10 @@ class Plugboard():
 class Keyboard():
     """Create a keyboard.
         This keyboard maps alphabets to integer.
-        Also maps a space with "xz"
+        Some special characters are also mapped to a combination of alphabets first and then to integer:
+        a space with "xz"
         a fullstop with "wq"
-        and a question mark with "ds"."""
+        and a question mark with "ds"		"""
     def input_text(self,text='This is Enigma'):
         text=text.replace(' ',"xz")
         text=text.replace('.', "wq")
@@ -109,7 +110,8 @@ class Keyboard():
         return o_text
 
 class Enigma():
-    """Takes four arguments of which last three are wiring settings for 2 rotors and a reflector
+    """Enigma machine with two rotors, one reflector and a plugboard.
+    Takes five arguments of which last four are wiring settings for 2 rotors, a reflector and a plugboard.
     First argument is a tuple of two elements containing offset of two rotors"""       
     def __init__(self,off, wiring1, wiring2, wiring3, wiring4):
         self.wiring1=wiring1
