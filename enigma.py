@@ -155,7 +155,7 @@ if __name__== "__main__":
     string=' '.join(string)
     enigma=Enigma((0,0), w_rotor1, w_rotor2, w_reflector,w_plugboard)
     key=Keyboard()
-    if(arg[1]=="cipher" or arg[1]=="c"):
+    if(arg[1] in ("cipher", 'c')):
         print("Ciphered text is: "+ key.out_text_cipher(enigma.cipher(key.input_text(string))))
-    if(arg[1]=="decipher" or arg[1]=="d"):
+    if(arg[1] in ("decipher", 'd')):
         print("Deciphered text is: " + key.out_text_decipher(enigma.cipher(key.input_text(string))))
