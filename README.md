@@ -5,9 +5,21 @@ Implimentation of Enigma machine using python language.
 
 This implimentation consists of two rotors, one reflector and one plugboard.
 
-More rotors can be added and their wiring can also be changed if required.
+More rotors can be added and their wiring can also be changed if required. Default plugboard has ten wires.
 
-Plain text can contain all 26 alphabets, spaces, full-stops and quetion-marks (but no other characters are allowed)
+Plain text (unciphered text) can contain all 26 alphabets, spaces, full-stops and quetion-marks (but no other characters are allowed)
+
+Default wirings for the two rotors, one reflector and plugboard are:
+
+ | ABCDEFGHIJKLMNOPQRSTUVWXYZ 
+  --- | --- 
+rotor no. 1 | DMTWSILRUYQNKFEJCAZBPGXOHV 
+rotor no. 2 | HQZGPJTMOBLNCIFDYAWVEUSRKX 
+reflector | EJMZALYXVBWFCRQUONTSPIKHGD 
+plugboard | BADCFEHGJILKNMPORQTSUVWXYZ 
+
+The wirings are such that in rotor no. 1 : A maps to D, B maps to M and so forth.
+
 
 Usage
 ```shell
