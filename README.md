@@ -7,7 +7,7 @@ This implimentation consists of two rotors, one reflector and one plugboard.
 
 More rotors can be added and their wiring can also be changed if required. Default plugboard has ten wires.
 
-Plain text (unciphered text) can contain all 26 alphabets, spaces, full-stops and quetion-marks (but no other characters are allowed)
+Plain text (unciphered text) can contain all 26 alphabets, spaces, full-stops, quetion-marks, '@', '-', '(', ')' and '#' (but no other characters are allowed)
 
 Default wirings for the two rotors, one reflector and plugboard are:
 
