@@ -106,6 +106,7 @@ class Keyboard():
         text = text.replace(')', "rfvtg")
         text = text.replace('@', "wsxcd")
         text = text.replace('*', "ujmnh")
+        text = text.replace('&', "vbnwe")
         in_text = []
         text = text.lower()
         for i in text:
@@ -132,6 +133,7 @@ class Keyboard():
         o_text = o_text.replace("rfvtg", ')')
         o_text = o_text.replace("wsxcd", '@')
         o_text = o_text.replace("ujmnh", '*')
+        o_text = o_text.replace("vbnwe", '&')
         return o_text
 
 
