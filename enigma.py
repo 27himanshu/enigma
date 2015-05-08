@@ -121,6 +121,7 @@ class Keyboard():
         o_text = []
         for i in text:
             o_text.append(chr(i+97))
+        o_text = ''.join(o_text)
         o_text = o_text.replace("xzcvb", ' ')
         o_text = o_text.replace("wqert", '.')
         o_text = o_text.replace("dsafg", '?')
