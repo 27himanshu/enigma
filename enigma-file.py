@@ -17,7 +17,7 @@ with open(filename, 'r') as plaintxt:
     lines = plaintxt.readlines()
     lines = [line.strip() for line in lines]  # striping newline character
     for l in lines:
-        if todo in ("cipher" or "c"):
+        if todo in ("cipher", 'c'):
             print(key.out_text_cipher(e.cipher(key.input_text(l))))
-        if todo in ("decipher" or "d"):
+        if todo in ("decipher", 'd'):
             print(key.out_text_decipher(e.cipher(key.input_text(l))))
