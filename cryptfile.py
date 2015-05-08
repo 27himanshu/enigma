@@ -1,4 +1,8 @@
-"""Crypt text file"""
+"""Crypt text file
+usage:
+	$python cryptfile cipher "filename"
+	$python cryptfile decipher "filename" """
+
 import enigma
 from sys import argv
 (script, todo, filename) = argv
