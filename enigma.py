@@ -96,6 +96,8 @@ class Keyboard():
         and a question mark with "ds"		"""
 
     def input_text(self, text='This is Enigma'):
+    		# replacing special characters with a string of alphabets (this string
+        # does not have any special meaning in English language)
         text = text.replace(' ', "xzcvb")
         text = text.replace('.', "wqert")
         text = text.replace('?', "dsafg")
