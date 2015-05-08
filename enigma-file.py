@@ -1,7 +1,7 @@
 """Crypt text file
 usage:
-	$python cryptfile cipher "filename"
-	$python cryptfile decipher "filename" """
+	$ python enigma-file cipher "filename"
+	$ python enigma-file decipher "filename" """
 
 import enigma
 from sys import argv
