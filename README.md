@@ -27,4 +27,6 @@ $ python enigma.py cipher hello world
 >>Ciphered text is: xfdwhamqadtn
 $ python enigma.py decipher xfdwhamqadtn
 >>Deciphered text is: hello world
+$ python enigma-file.py cipher "plaint-text-filename.txt"
+$ python enigma-file.py decipher "encrypted-text-filename.txt"
 ```
