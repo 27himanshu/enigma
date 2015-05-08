@@ -96,9 +96,14 @@ class Keyboard():
         and a question mark with "ds"		"""
 
     def input_text(self, text='This is Enigma'):
-        text = text.replace(' ', "xz")
-        text = text.replace('.', "wq")
-        text = text.replace('?', "ds")
+        text = text.replace(' ', "xzcvb")
+        text = text.replace('.', "wqert")
+        text = text.replace('?', "dsafg")
+        text = text.replace('-', "ipouy")
+        text = text.replace('(', "ljkhg")
+        text = text.replace(')', "rfvtg")
+        text = text.replace('@', "wsxcd")
+        text = text.replace('#', "ujmnh")
         in_text = []
         text = text.lower()
         for i in text:
@@ -116,10 +121,14 @@ class Keyboard():
         o_text = []
         for i in text:
             o_text.append(chr(i+97))
-        o_text = ''.join(o_text)
-        o_text = o_text.replace("xz", " ")
-        o_text = o_text.replace("wq", ".")
-        o_text = o_text.replace("ds", "?")
+        o_text = o_text.replace("xzcvb", ' ')
+        o_text = o_text.replace("wqert", '.')
+        o_text = o_text.replace("dsafg", '?')
+        o_text = o_text.replace("ipouy", '-')
+        o_text = o_text.replace("ljkhg", '(')
+        o_text = o_text.replace("rfvtg", ')')
+        o_text = o_text.replace("wsxcd", '@')
+        o_text = o_text.replace("ujmnh", '#')
         return o_text
 
 
