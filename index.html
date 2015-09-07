@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Enigma Machine in Python : Enigma">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Enigma Machine in Python</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/27himanshu/enigma">View on GitHub</a>
+
+          <h1 id="project_title">Enigma Machine in Python</h1>
+          <h2 id="project_tagline">Enigma</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/27himanshu/enigma/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/27himanshu/enigma/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="enigma" class="anchor" href="#enigma" aria-hidden="true"><span class="octicon octicon-link"></span></a>Enigma</h1>
+
+<p>Implimentation of Enigma machine using python language.</p>
+
+<p>This implimentation consists of two rotors, one reflector and one plugboard.</p>
+
+<p>More rotors can be added and their wiring can also be changed if required. Default plugboard has ten wires.</p>
+
+<p>Plain text (unciphered text) can contain all <strong>26 alphabets, spaces, full-stops, quetion-marks, @, -, (, ) and # (but no other characters are allowed)</strong></p>
+
+<p>Default wirings for the two rotors, one reflector and plugboard are:</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>ABCDEFGHIJKLMNOPQRSTUVWXYZ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rotor no. 1</td>
+<td>DMTWSILRUYQNKFEJCAZBPGXOHV</td>
+</tr>
+<tr>
+<td>rotor no. 2</td>
+<td>HQZGPJTMOBLNCIFDYAWVEUSRKX</td>
+</tr>
+<tr>
+<td>reflector</td>
+<td>EJMZALYXVBWFCRQUONTSPIKHGD</td>
+</tr>
+<tr>
+<td>plugboard</td>
+<td>BADCFEHGJILKNMPORQTSUVWXYZ</td>
+</tr>
+</tbody>
+</table>
+
+<p>The wirings are such that in rotor no. 1 : A maps to D, B maps to M and so forth.</p>
+
+<p>Usage</p>
+
+<div class="highlight highlight-shell"><pre>$ python enigma.py cipher hello world
+<span class="pl-k">&gt;&gt;</span>Ciphered text is: xfdwhamzwlbposa
+$ python enigma.py decipher xfdwhamqadtn
+<span class="pl-k">&gt;&gt;</span>Deciphered text is: hello world
+$ python enigma-file.py cipher <span class="pl-s"><span class="pl-pds">"</span>plaint-text-filename.txt<span class="pl-pds">"</span></span>
+$ python enigma-file.py decipher <span class="pl-s"><span class="pl-pds">"</span>encrypted-text-filename.txt<span class="pl-pds">"</span></span></pre></div>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Enigma Machine in Python maintained by <a href="https://github.com/27himanshu">27himanshu</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
