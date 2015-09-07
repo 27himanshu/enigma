@@ -155,13 +155,6 @@ class Enigma():
         self.r3 = Rotor(self.wiring3, is_reflector=True)
         self.p1 = Plugboard(self.wiring4)
 
-    def reset(self):
-        """Resets the current instance to its initial settings"""
-        self.r1(self.wiring1, offset=self.off[0])
-        self.r2(self.wiring3, offset=self.off[1])
-        self.r3(self.wiring3, is_reflector=True)
-        self.p1(self.wiring4)
-        return
 
     def cipher(self, in_text):
         """Encode the list in_text and return the encoded list"""
