@@ -96,7 +96,7 @@ class Keyboard():
         and a question mark with "ds"		"""
 
     def input_text(self, text='This is Enigma'):
-    		# replacing special characters with a string of alphabets (this string
+        # replacing special characters with a string of alphabets (this string
         # does not have any special meaning in English language)
         text = text.replace(' ', "xzcvb")
         text = text.replace('.', "wqert")
@@ -180,15 +180,15 @@ if __name__ == "__main__":
     string = ' '.join(string)
     enigma = Enigma((0, 0), w_rotor1, w_rotor2, w_reflector, w_plugboard)
     key = Keyboard()
+    if (len(arg) < 2):
+        print("No arguments provided. Usage is as follows:\nenigma cipher TEXT_TO_BE_CIPHERED\nOR\nenigma decipher TEXT_TO_BE_DECIPHERED")
+        sys.exit()
     if(arg[1] in ("cipher", 'c')):
-        print(
-            "Ciphered text is: " +
-            key.out_text_cipher(
-                enigma.cipher(
-                    key.input_text(string))))
+        print( "Ciphered text is: " + key.out_text_cipher(enigma.cipher(key.input_text(string))))
+        sys.exit()
     if(arg[1] in ("decipher", 'd')):
-        print(
-            "Deciphered text is: " +
-            key.out_text_decipher(
-                enigma.cipher(
-                    key.input_text(string))))
+        print( "Deciphered text is: " + key.out_text_decipher(enigma.cipher(key.input_text(string))))
+        sys.exit()
+    else:
+        print("No arguments provided. Usage is as follows:\nenigma cipher TEXT_TO_BE_CIPHERED\nOR\nenigma decipher TEXT_TO_BE_DECIPHERED")
+        sys.exit()
