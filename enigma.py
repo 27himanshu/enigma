@@ -1,3 +1,4 @@
+#!/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Enigma
@@ -27,7 +28,6 @@ w_plugboard = [1, 0, 3, 2, 5, 4, 7, 6, 9, 8, 11, 10, 13, 12, 15, 14, 17, 16, 19,
 
 
 class Rotor():
-
     """Create new rotors with wirings
     """
 
@@ -91,9 +91,9 @@ class Keyboard():
         This keyboard maps alphabets to integer.
         Some special characters are also mapped to a combination of alphabets
         first and then to integer:
-        a space with "xz"
-        a fullstop with "wq"
-        and a question mark with "ds"		"""
+        a space with "xzcvb"
+        a fullstop with "wqert"
+        a question mark with "dsafg" and so on"""
 
     def input_text(self, text='This is Enigma'):
         # replacing special characters with a string of alphabets (this string
@@ -176,19 +176,25 @@ class Enigma():
 if __name__ == "__main__":
     import sys
     arg = sys.argv
-    string = arg[2:]
-    string = ' '.join(string)
     enigma = Enigma((0, 0), w_rotor1, w_rotor2, w_reflector, w_plugboard)
     key = Keyboard()
     if (len(arg) < 2):
-        print("No arguments provided. Usage is as follows:\nenigma cipher TEXT_TO_BE_CIPHERED\nOR\nenigma decipher TEXT_TO_BE_DECIPHERED")
+        print("No arguments provided. Usage is as follows:\nenigma cipher \
+              TEXT_TO_BE_CIPHERED\nOR\nenigma decipher TEXT_TO_BE_DECIPHERED")
         sys.exit()
     if(arg[1] in ("cipher", 'c')):
-        print( "Ciphered text is: " + key.out_text_cipher(enigma.cipher(key.input_text(string))))
+        string = arg[2:]
+        string = ' '.join(string)
+        print( "Ciphered text is: " + \
+              key.out_text_cipher(enigma.cipher(key.input_text(string))))
         sys.exit()
     if(arg[1] in ("decipher", 'd')):
-        print( "Deciphered text is: " + key.out_text_decipher(enigma.cipher(key.input_text(string))))
+        string = arg[2:]
+        string = ' '.join(string)
+        print( "Deciphered text is: " + \
+              key.out_text_decipher(enigma.cipher(key.input_text(string))))
         sys.exit()
     else:
-        print("No arguments provided. Usage is as follows:\nenigma cipher TEXT_TO_BE_CIPHERED\nOR\nenigma decipher TEXT_TO_BE_DECIPHERED")
+        print("Usage is as follows:\n{} cipher TEXT_TO_BE_CIPHERED\nOR\n{} \
+              decipher TEXT_TO_BE_DECIPHERED".format(arg[0],arg[0]))
         sys.exit()

@@ -1,3 +1,4 @@
+#!/bin/env python3
 """Crypt text file
 usage:
 	$ python enigma-file cipher "filename"
